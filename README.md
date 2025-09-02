@@ -1,6 +1,6 @@
 # Post-stack Seismic Data Denoising via Dynamic Guided Learning
 
-This is the official implementation of the paper **Poststack Seismic Data Denoising via Dynamic Guided Learning** [arXiv](https://arxiv.org/abs/2502.00887). This work introduces a dynamic guided learning workflow that utilizes a dynamic database to generate both clean and noisy patches during training. This database guides the learning process for a supervised enhancement task, improving generalization by reducing reliance on specific known distributions. As a result, the method eliminates the need for external datasets while enhancing generalization and adaptability.
+This is the official implementation of the paper **Poststack Seismic Data Denoising via Dynamic Guided Learning** [The Leading Edge](**https://arxiv.org/abs/2502.00887**). This work introduces a dynamic guided learning workflow that utilizes a dynamic database to generate both clean and noisy patches during training. This database guides the learning process for a supervised enhancement task, improving generalization by reducing reliance on specific known distributions. As a result, the method eliminates the need for external datasets while enhancing generalization and adaptability.
 
 **Proposed method**
 
@@ -47,13 +47,15 @@ PSNR (dB) and SSIM metrics across different simulated types of noise for enhance
 If you find the Dynamic Guided Learning useful in your research, please consider citing:
 
 ```
-@misc{torresquintero2025poststackseismicdatapreconditioning,
-      title={Poststack Seismic Data Preconditioning via Dynamic Guided Learning}, 
-      author={Javier Torres-Quintero and Paul Goyes-Peñafiel and Ana Mantilla-Dulcey and Luis Rodríguez-López and José Sanabria-Gómez and Henry Arguello},
-      year={2025},
-      eprint={2502.00887},
-      archivePrefix={arXiv},
-      primaryClass={physics.geo-ph},
-      url={https://arxiv.org/abs/2502.00887}, 
+@article{doi:10.1190/tle44090692.1,
+author = { Javier Torres-Quintero  and  Paul Goyes-Peñafiel  and  Ana Mantilla-Dulcey  and  Luis Rodríguez-López  and  José Sanabria-Gómez  and  Henry Arguello },
+title = {Poststack seismic data denoising via dynamic guided learning},
+journal = {The Leading Edge},
+volume = {44},
+number = {9},
+pages = {692-704},
+year = {2025},
+doi = {10.1190/tle44090692.1},
+URL = { https://doi.org/10.1190/tle44090692.1}
 }
 ```
