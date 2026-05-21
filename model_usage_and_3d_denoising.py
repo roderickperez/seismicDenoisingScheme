@@ -603,7 +603,8 @@ print('Zoomed ROI extents used (transformed view):')
 for row_name in zoom_data:
     x0, x1, y0, y1 = zoom_data[row_name]['extent']
     print(f'  {row_name}: x=[{x0}:{x1}], y=[{y0}:{y1}]')
-print(f'Shared scale (all columns): vmin={shared_vmin:.2f}, vmax={shared_vmax:.2f}')
+print(f'Global scale: vmin={global_vmin:.2f}, vmax={global_vmax:.2f}')
+print(f'Diff scale: vmin={diff_vmin:.2f}, vmax={diff_vmax:.2f}')
 
 
 # ## C) Denoise full 3D volume and (optionally) save
