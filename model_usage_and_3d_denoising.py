@@ -218,18 +218,14 @@ for nt in NOISE_TYPES:
 
 # ── Plot ─────────────────────────────────────────────────────────────────────
 n_rows = len(rows)
-col_titles = ['Clean', 'Noisy', 'Denoised', 'Clean − Denoised']
+col_titles = ['Clean', 'Noisy', 'Denoised']
 
-# Full [0,1] range for Clean/Noisy/Denoised; tight symmetric range for the diff column
+# Full [0,1] range for Clean/Noisy/Denoised
 vmin, vmax = 0, 1
-diff_abs = max(abs(float(d[3].min())) for d in rows if True)
-diff_abs = max(abs(float(row[3].min())) for row in rows)
-diff_abs = max(diff_abs, max(abs(float(row[3].max())) for row in rows))
-diff_vmin, diff_vmax = -diff_abs, diff_abs
 
 # n_rows image rows + 1 thin colorbar row
 fig, axes = plt.subplots(
-    n_rows + 1, 4, figsize=(16, n_rows * 2.2),
+    n_rows + 1, 3, figsize=(12, n_rows * 2.2),
     gridspec_kw={'height_ratios': [10] * n_rows + [0.5], 'hspace': 0.15, 'wspace': 0.2}
 )
 
@@ -237,11 +233,11 @@ fig, axes = plt.subplots(
 for c, ct in enumerate(col_titles):
     axes[0, c].set_title(ct, fontsize=11, pad=4)
 
-col_ims = [None] * 4
+col_ims = [None] * 3
 for r, (noise_name, noisy, den, diff) in enumerate(rows):
-    imgs   = [clean_np, noisy, den, diff]
-    vmins  = [vmin,  vmin,  vmin,  vmin]
-    vmaxes = [vmax,  vmax,  vmax,  vmax]
+    imgs   = [clean_np, noisy, den]
+    vmins  = [vmin,  vmin,  vmin]
+    vmaxes = [vmax,  vmax,  vmax]
     for c, img in enumerate(imgs):
         im = axes[r, c].imshow(img, cmap='gray', vmin=vmins[c], vmax=vmaxes[c], aspect='auto')
         axes[r, c].axis('off')
